@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.mybatis.mapper.StorageMapper">
+  <resultMap id="BaseResultMap" type="com.atguigu.mybatis.domain.Storage">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="bookid" jdbcType="INTEGER" property="bookid" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="markdate" jdbcType="DATE" property="markdate" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from storage
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.atguigu.mybatis.domain.Storage">
+    insert into storage (id, bookid, status, 
+      markdate)
+    values (#{id,jdbcType=INTEGER}, #{bookid,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, 
+      #{markdate,jdbcType=DATE})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.atguigu.mybatis.domain.Storage">
+    update storage
+    set bookid = #{bookid,jdbcType=INTEGER},
+      status = #{status,jdbcType=VARCHAR},
+      markdate = #{markdate,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, bookid, status, markdate
+    from storage
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, bookid, status, markdate
+    from storage
+  </select>
+  <resultMap id="BaseResultMap" type="com.atguigu.mybatis.domain.Storage">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="bookid" jdbcType="INTEGER" property="bookid" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="markdate" jdbcType="DATE" property="markdate" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from storage
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.atguigu.mybatis.domain.Storage">
+    insert into storage (id, bookid, status, 
+      markdate)
+    values (#{id,jdbcType=INTEGER}, #{bookid,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, 
+      #{markdate,jdbcType=DATE})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.atguigu.mybatis.domain.Storage">
+    update storage
+    set bookid = #{bookid,jdbcType=INTEGER},
+      status = #{status,jdbcType=VARCHAR},
+      markdate = #{markdate,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, bookid, status, markdate
+    from storage
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, bookid, status, markdate
+    from storage
+  </select>
+</mapper>
