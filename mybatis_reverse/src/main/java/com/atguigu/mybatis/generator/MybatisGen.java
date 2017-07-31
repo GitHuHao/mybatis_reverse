@@ -15,7 +15,8 @@ import org.mybatis.generator.internal.DefaultShellCallback;
  */
 public class MybatisGen {
 	
-	protected static Logger logger = Logger.getLogger(MybatisGen.class);
+  protected static Logger logger = Logger.getLogger(MybatisGen.class);
+  
   public static void main(String[] args) throws Exception {
      List<String> warnings = new ArrayList<String>();
        boolean overwrite = true;
@@ -26,7 +27,7 @@ public class MybatisGen {
        MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
        myBatisGenerator.generate(null);
        
-       System.out.println("mybatis generator completed ....");
+       logger.info("mybatis generator completed ....");
   }
   
 }
